@@ -1,0 +1,92 @@
+.banner {
+    color: white;
+    object-fit: contain;
+    height: 538px;
+  }
+  
+  .banner__contents {
+    margin-left: 30px;
+    padding-top: 140px;
+    height: 420px;
+  }
+  .banner__title {
+    font-size: 3rem;
+    font-weight: 800;
+    padding-bottom: 0.3rem;
+    text-align: left;
+  }
+  
+  .banner__description {
+    width: 20rem;
+    line-height: 1.3;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    max-width: 360px;
+    height: 80px;
+  }
+  .banner__button {
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    border-radius: 10px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-right: 1rem;
+    padding-top: 0.5rem;
+    background-color: rgba(255, 0, 0, 0.8);
+    padding-bottom: 0.5rem;
+    /* margin-left: 33px; */
+  }
+  .banner__button:hover {
+    color: rgb(56, 42, 42);
+    background-color: #ff0000;
+    transition: all 0.4s;
+  }
+  .banner__fadeBottom {
+    height: 7.4rem;
+    background-image: linear-gradient(
+      180deg,
+      transparent,
+      rgba(37, 37, 37, 0.51),
+      #111
+    );
+  }
+
+  .cont{
+    width: 89%;
+    margin: 10px auto;
+  }
+  .rw_imags{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
+
+  .rw_images{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
+
+  .rw_images::-webkit-scrollbar{
+    display: none;
+  }
+
+  .rw_imag{
+    object-fit: contain;
+    width: 100%;
+    max-height: 240px;
+    margin-right: 13px;
+    transition: transform 500ms;
+    cursor: pointer;
+  }
+
+  .rw_imag:hover{
+    transform: scale(1.03);
+  }
+
+  .logo{
+    font-family: 'Lobster', cursive;
+  }
