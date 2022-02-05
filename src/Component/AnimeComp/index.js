@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Tab, Tabs } from "react-bootstrap";
 import OnePieceComp from "./Action/OnePieceComp";
 import '../MovieComp/style.css'
-import OnePunchManComp from "./Action/OnePunchManComp";
+// import OnePunchManComp from "./Action/OnePunchManComp";
 import BleachComp from "./Action/BleachComp";
 import AttackOnTittanComp from "./OverPower/AttackOnTittanComp";
 import HaikyuuComp from "./Sports/HaikyuuComp";
@@ -23,7 +23,7 @@ const Anime = () => {
         >
         <Tab eventKey="home" title="Action">
           <OnePieceComp />
-          <OnePunchManComp />
+          {/* <OnePunchManComp /> */}
           <BleachComp />
         </Tab>
         <Tab eventKey="profile" title="Over Power">
