@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import Axios from "../Axios";
 import requests from "../ApiKey";
 import "./style.css";
+import Slider from "react-slick";
 
 function Banner() {
   const [movie, setMovie] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      const request = await Axios.get(requests.fetchNetflixOriginals);
+      const request = await Axios.get(requests.fetchUpcoming);
       setMovie(
         request.data.results[
           Math.floor(Math.random() * request.data.results.length - 1)

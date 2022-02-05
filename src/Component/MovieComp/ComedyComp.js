@@ -13,16 +13,16 @@ const styleH3 = {
 
 const Image = { borderRadius: "10px" };
 
-const TrendingComp = ({ url, title, isLargeRow }) => {
-  const [trending, setTrending] = useState([]);
+const ComedyComp = ({ url, title, isLargeRow }) => {
+  const [comedy, setComedy] = useState([]);
   const [loading, setLoading] = useState(false);
   const [trailerUrl, setTrailerUrl] = useState("");
 
-  const getTrending = async () => {
+  const getComedy = async () => {
     setLoading(true);
     try {
       let res = await Axios.get(url);
-      setTrending(res.data.results);
+      setComedy(res.data.results);
       setLoading(false);
     } catch (e) {
       setLoading(true);
@@ -31,7 +31,7 @@ const TrendingComp = ({ url, title, isLargeRow }) => {
   };
 
   useEffect(() => {
-    getTrending();
+    getComedy();
   }, []);
 
   const opts = {
@@ -41,12 +41,12 @@ const TrendingComp = ({ url, title, isLargeRow }) => {
       autoplay: 1,
     },
   };
-  const handleClick = async (trend, isLargeRow) => {
+  const handleClick = async (com, isLargeRow) => {
     if (trailerUrl) {
       setTrailerUrl("");
     } else if (!isLargeRow) {
       let trailerurl = await Axios.get(
-        `/movie/${trend.id}/videos?api_key=fb34530271b349314af0de263d16ab5a`
+        `/movie/${com.id}/videos?api_key=fb34530271b349314af0de263d16ab5a`
       );
       setTrailerUrl(trailerurl.data.results[0]?.key);
     }
@@ -60,7 +60,7 @@ const TrendingComp = ({ url, title, isLargeRow }) => {
         <>
           <h5 style={styleH3}>{title}</h5>
           <div className="rw_imags">
-            {trending.map((trend, index) => {
+            {comedy.map((com, index) => {
               return (
                 <>
                 <div className="container">
@@ -69,10 +69,10 @@ const TrendingComp = ({ url, title, isLargeRow }) => {
                     key={index}
                     className="image"
                     style={Image}
-                    src={`${image_uri}${trend.poster_path}`}
+                    src={`${image_uri}${com.poster_path}`}
                   />
                   <div className="middle">
-                    <div onClick={() => handleClick(trend, isLargeRow)} className="text">TRAILER</div>
+                    <div onClick={() => handleClick(com, isLargeRow)} className="text">TRAILER</div>
                   </div>
                   </div>
                 </>
@@ -87,4 +87,5 @@ const TrendingComp = ({ url, title, isLargeRow }) => {
   );
 };
 
-export default TrendingComp;
+export default ComedyComp;
+

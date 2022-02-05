@@ -12,7 +12,7 @@ const GenreActionComp = ({ url, title }) => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 400,
     slidesToShow: 6,
     slidesToScroll: 6,
     
@@ -41,9 +41,8 @@ const GenreActionComp = ({ url, title }) => {
             {/* <div className="rw_imags"> */}
               {action.map((acti, index) => {
                 return (
-                  <Col>
+                  <Col  key={index}>
                     <img
-                      key={index}
                       className="rw_imag"
                       style={Image}
                       src={`${image_uri}${acti.poster_path}`}
