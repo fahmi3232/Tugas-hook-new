@@ -125,3 +125,26 @@ main {
 .popup .content .close:hover {
 	background: #ffffff;
 }
+
+nav{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width:100%;
+	z-index: 1;
+	  background-color: transparent;
+	  transition: 0.6s ease-in-out;
+	}
+	nav.active{
+	box-shadow: 5px 10px 30px rgba(0, 247, 255, 0.157);
+	background-color: #ffffff;
+	}
+	
+	.active{
+		background-color: #ffffff;
+		color:#ff6969;
+	  transition: all ease 0.2s;
+	  }

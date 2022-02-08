@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   Col,
   Container,
@@ -14,14 +14,26 @@ import { LinkContainer } from "react-router-bootstrap";
 import "../Component/MovieComp/style.css";
 
 const NavbarComp = () => {
+  const [nav, setNav] = useState(false)
+
+  const changeBackground = () => {
+    if(window.scrollY >= 50){
+      setNav(true)
+    } else{
+      setNav(false)
+    }
+  }
+
+  window.addEventListener('scroll', changeBackground)
+
   return (
     <div>
       <Container fluid>
         <Row>
           <Col>
-            <Navbar fixed="top" bg="light"  expand="lg">
+            <Navbar className={nav ? 'nav active' : 'nav'} fixed="top"  expand="lg">
               <Container>
-                <Navbar.Brand href="#" className="logo">
+                <Navbar.Brand href="#" className="logo" style={{color: "red"}}>
                   Stream Vid
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
@@ -31,16 +43,16 @@ const NavbarComp = () => {
                     style={{ maxHeight: "100px" }}
                     navbarScroll
                   >
-                    <LinkContainer to="/">
-                      <Nav.Link>Home</Nav.Link>
+                    <LinkContainer style={{color: "#ff6969", fontWeight: 500}} to="/">
+                      <Nav.Link className="active">Home</Nav.Link>
                     </LinkContainer>
-                    <LinkContainer to="/list-movie">
+                    <LinkContainer style={{color: "#ff6969", fontWeight: 500}} to="/list-movie">
                       <Nav.Link>Indonesia</Nav.Link>
                     </LinkContainer>
-                    <LinkContainer to="/india">
+                    <LinkContainer style={{color: "#ff6969", fontWeight: 500}} to="/india">
                       <Nav.Link>India</Nav.Link>
                     </LinkContainer>
-                    <LinkContainer to="/korea">
+                    <LinkContainer style={{color: "#ff6969", fontWeight: 500}} to="/korea">
                       <Nav.Link>Korea</Nav.Link>
                     </LinkContainer>
                     {/* <LinkContainer to="/japanese">
@@ -75,7 +87,7 @@ const NavbarComp = () => {
                       className="me-2"
                       aria-label="Search"
                     />
-                    <Button variant="outline-success">Search</Button>
+                    <Button variant="outline-danger">Search</Button>
                   </Form>
                 </Navbar.Collapse>
               </Container>

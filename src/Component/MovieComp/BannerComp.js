@@ -26,18 +26,19 @@ function Banner() {
 
   return (
     <header
-      className="banner mt-5"
+      className="banner"
       style={{
+        marginTop: -1,
         backgroundSize: "cover",
         backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie?.backdrop_path})`,
         backgroundPosition: "center center",
       }}
     >
       <div className="banner__contents">
-        <h1 className="banner__title">
+        <h1 className="banner__title" style={{color: "white"}}>
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
-        <h1 style={{textAlign: "left"}} className="banner__description">
+        <h1 style={{textAlign: "left", color: "white"}} className="banner__description">
           {truncate(movie?.overview, 200)}
         </h1>
         <div className="d-flex py-5">
