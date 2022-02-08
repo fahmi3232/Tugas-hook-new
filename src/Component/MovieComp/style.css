@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@0;1&display=swap');
 
 
+
 .banner {
     color: white;
     object-fit: contain;
@@ -63,6 +64,12 @@
     font-family: 'Balsamiq Sans', cursive;
   }
   .rw_imags{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
+
+  .rw_imagse{
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;

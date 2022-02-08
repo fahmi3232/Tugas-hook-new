@@ -1,6 +1,17 @@
 import React from "react";
-import { Col, Container, Row, Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
-import '../Component/MovieComp/style.css'
+import {
+  Col,
+  Container,
+  Row,
+  Navbar,
+  Nav,
+  NavDropdown,
+  Form,
+  FormControl,
+  Button,
+} from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
+import "../Component/MovieComp/style.css";
 
 const NavbarComp = () => {
   return (
@@ -8,9 +19,11 @@ const NavbarComp = () => {
       <Container fluid>
         <Row>
           <Col>
-            <Navbar fixed="top" bg="light" expand="lg">
+            <Navbar fixed="top" bg="light"  expand="lg">
               <Container>
-                <Navbar.Brand href="#" className="logo">Stream Vid</Navbar.Brand>
+                <Navbar.Brand href="#" className="logo">
+                  Stream Vid
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                   <Nav
@@ -18,12 +31,27 @@ const NavbarComp = () => {
                     style={{ maxHeight: "100px" }}
                     navbarScroll
                   >
-                    <Nav.Link>Live</Nav.Link>
-                    <Nav.Link>Proliga</Nav.Link>
-                    <Nav.Link>Sports</Nav.Link>
-                    <Nav.Link>Premier</Nav.Link>
-                    <Nav.Link>TV Show</Nav.Link>
-                    <Nav.Link>Movies</Nav.Link>
+                    <LinkContainer to="/">
+                      <Nav.Link>Home</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to="/list-movie">
+                      <Nav.Link>Indonesia</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to="/india">
+                      <Nav.Link>India</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to="/korea">
+                      <Nav.Link>Korea</Nav.Link>
+                    </LinkContainer>
+                    {/* <LinkContainer to="/japanese">
+                      <Nav.Link>Japanese</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to="/chinese">
+                      <Nav.Link>Chinese</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to="/french">
+                      <Nav.Link>French</Nav.Link>
+                    </LinkContainer>
                     <NavDropdown title="More" id="navbarScrollingDropdown">
                       <NavDropdown.Item href="#action3">
                         Action
@@ -36,6 +64,9 @@ const NavbarComp = () => {
                         Something else here
                       </NavDropdown.Item>
                     </NavDropdown>
+                    <LinkContainer to="/form">
+                      <Nav.Link>Berlangganan</Nav.Link>
+                    </LinkContainer> */}
                   </Nav>
                   <Form className="d-flex">
                     <FormControl

@@ -1,0 +1,12 @@
+.imag{
+    cursor: pointer;
+}
+
+.img{
+    border-radius: 13px;
+    transition: .5s;
+}
+
+.img:hover{
+    transform: scale(1.03);
+}
